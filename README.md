@@ -8,7 +8,9 @@ Once you're finished, upload your `main.js` to the assignment on Populi (through
 
 Please take a one hour break from 1:00pm - 2:00pm to eat lunch, rest your brain, and come back to the exam with a fresh set of eyes. 
 
-As usual, you can run the tests with the `npm run test` command.
+To start off, do an `npm install`.
+
+From here, you can run the tests with the `npm run test` command.
 
 ## Tips
 

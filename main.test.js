@@ -136,28 +136,20 @@ describe('incrementalCount', () => {
     expect(incrementalCount(10, 30, 10)).toStrictEqual([10, 20, 30]);
   });
 
-  it('should be able to count by values less than one', () => {
-    expect(incrementalCount(5, 7.5, 0.5)).toStrictEqual([5, 5.5, 6, 6.5, 7, 7.5]);
-    expect(incrementalCount(0, 0.3, 0.1)).toStrictEqual([0, 0.1, 0.2, 0.3]);
-  });
-
   it('should be able to count by negative numbers', () => {
     expect(incrementalCount(30, 10, -10)).toStrictEqual([30, 20, 10]);
     expect(incrementalCount(10, 4, -1)).toStrictEqual([10, 9, 8, 7, 6, 5, 4]);
   });
 
   it('should be able to count by zeroes if the start number is equal to the end number', () => {
-    expect(incrementalCount(10, 10, 0)).toStrictEqual([10]);
-    expect(incrementalCount(100, 100, 0)).toStrictEqual([100]);
-    expect(incrementalCount(0, 0, 0)).toStrictEqual([0]);
+    expect(incrementalCount(10, 10, 1)).toStrictEqual([10]);
+    expect(incrementalCount(100, 100, 1)).toStrictEqual([100]);
+    expect(incrementalCount(0, 0, 1)).toStrictEqual([0]);
   });
 });
 
 describe('multiplicationTable', () => {
   it('can create a multiplication table', () => {
-    expect(multiplicationTable(0, 0)).toStrictEqual([[]]);
-    expect(multiplicationTable(0, 10)).toStrictEqual([[]]);
-    expect(multiplicationTable(10, 0)).toStrictEqual([[]]);
     expect(multiplicationTable(10, 10)).toStrictEqual([[0,0,0,0,0,0,0,0,0,0],[0,1,2,3,4,5,6,7,8,9],[0,2,4,6,8,10,12,14,16,18],[0,3,6,9,12,15,18,21,24,27],[0,4,8,12,16,20,24,28,32,36],[0,5,10,15,20,25,30,35,40,45],[0,6,12,18,24,30,36,42,48,54],[0,7,14,21,28,35,42,49,56,63],[0,8,16,24,32,40,48,56,64,72],[0,9,18,27,36,45,54,63,72,81]]);
     expect(multiplicationTable(10, 20)).toStrictEqual([[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],[0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38],[0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57],[0,4,8,12,16,20,24,28,32,36,40,44,48,52,56,60,64,68,72,76],[0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95],[0,6,12,18,24,30,36,42,48,54,60,66,72,78,84,90,96,102,108,114],[0,7,14,21,28,35,42,49,56,63,70,77,84,91,98,105,112,119,126,133],[0,8,16,24,32,40,48,56,64,72,80,88,96,104,112,120,128,136,144,152],[0,9,18,27,36,45,54,63,72,81,90,99,108,117,126,135,144,153,162,171]]);
   });
