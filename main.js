@@ -20,11 +20,14 @@ if (typeof numOddValues === 'undefined') {
 if (typeof averageStringLength === 'undefined') {
   averageStringLength = undefined;
 }
-if (typeof firstPunctuationIndex === 'undefined') {
-  firstPunctuationIndex = undefined;
+if (typeof lastPunctuationIndex === 'undefined') {
+  lastPunctuationIndex = undefined;
 }
-if (typeof getPlace === 'undefined') {
-  getPlace = undefined;
+if (typeof incrementalCount === 'undefined') {
+  incrementalCount = undefined;
+}
+if (typeof multiplicationTable === 'undefined') {
+  multiplicationTable = undefined;
 }
 
 module.exports = {
@@ -32,6 +35,7 @@ module.exports = {
   oddIndices,
   numOddValues,
   averageStringLength,
-  firstPunctuationIndex,
-  getPlace
+  lastPunctuationIndex,
+  incrementalCount,
+  multiplicationTable
 };

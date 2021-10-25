@@ -1,12 +1,17 @@
-# 2021-10-24-midterm# Term 1 - Midterm Exam
+# Term 1 - Midterm Exam
 
 <img src='./motivation.gif' />
 
-> Welcome to the Term 1 midterm exam. This test will begin at 10:40am (or earlier) and end at 3:00pm. **Please take a one hour break** from 1:00pm - 2:00pm to eat lunch, rest your brain, and come back to the exam with a fresh set of eyes. As usual, you can run the tests with the `jest` command.
+Welcome to the Term 1 midterm exam. This test will begin at 10:40am (or earlier) and end at 4:00pm or whenever you finish.
+
+Once you're finished, upload your `main.js` to the assignment on Populi (through the CodeGrade link) then send a message on Slack to Alex and Brian.
+
+Please take a one hour break from 1:00pm - 2:00pm to eat lunch, rest your brain, and come back to the exam with a fresh set of eyes. 
+
+As usual, you can run the tests with the `npm run test` command.
 
 ## Tips
 
-* You may use the internet to look up anything you want (string methods, array methods, etc.)
 * If you're feeling stuck, skip it!
 * It's okay if you don't finish
 * You can go in any order
@@ -77,35 +82,77 @@ averageStringLength(['a', 'pleasant', 'string']) => 5
 
 ---
 
-### Problem 5: `firstPunctuationIndex`
+### Problem 5: `lastPunctuationIndex`
 
-Write a function, `firstPunctuationIndex`, that returns the index of the first appearance of a period, question mark, or exclamation mark in the given string. If none are found, return `-1`.
+Write a function, `lastPunctuationIndex`, that returns the index of the last appearance of a period, question mark, or exclamation mark in the given string. If none are found, return `-1`.
 
 **Examples**
 ```
-firstPunctuationIndex('wow! goodness me.') => 3
-firstPunctuationIndex('I love taking tests?') => 19
-firstPunctuationIndex('...hello?') => 0
-firstPunctuationIndex('alright alright alright') => -1
+lastPunctuationIndex('wow! goodness me.') => 16
+lastPunctuationIndex('I love taking tests.') => 19
+lastPunctuationIndex('...hello') => 2
+lastPunctuationIndex('...hello?') => 8
+lastPunctuationIndex('alright alright alright') => -1
 ```
 
 ---
 
-### Problem 6: `getPlace`
+### Problem 6: `incrementalCount`
 
-Write a function, `getPlace`, that takes in two parameters, a **sorted** list of high scores (highest first, loweset last)
-and a new `score`. The function should return a human readable string indicating which 
-place the new score fits into the given list of high scores.
+Write a function, `incrementalCount`, that takes in three numbers: a starting value,
+an ending value, and an increment.
 
-> Note 1: You are not required to insert `score` into the `highScores` array 
-
-> Note 2: We will assume that the new score is not already in the high scores array
-so that we don't have to handle ties
+The function should count from the starting value to the ending value (inclusive) in increments
+of the given increment. All of these values should be returned in an array.
 
 **Examples**
+
 ```
-getPlace([60, 30, 10], 90)     => '1st place'
-getPlace([60, 30, 10], 50)     => '2nd place'
-getPlace([60, 30, 10], 15)     => '3rd place'
-getPlace([500, 300, 200], 100) => '4th place'
+incrementalCount(5, 10, 1) => [5, 6, 7, 8, 9, 10]
+incrementalCount(5, 11, 2) => [5, 7, 9, 11]
+incrementalCount(5, 7.5, 0.5) => [5, 5.5, 6, 6.5, 7, 7.5]
+incrementalCount(30, 10, -10) => [30, 20, 10]
+```
+
+---
+
+## Extra credit: `multiplicationTable`
+
+Write a function, `multiplicationTable`, that takes in two numbers which represent a number of rows and a number of columns.
+
+The function should then return a multiplication table with a number of rows and columns equal to the given parameters. The multiplication table should be returned as an array of arrays of numbers (a matrix of numbers) where every number in the table can be calculate as the row index multiplied by the column index (starting at 0).
+
+For example, a 4 x 5 multiplication table would look like the following:
+```
+    0 1 2 3 4
+  ┌───────────
+0 │ 0 0 0 0 0
+1 │ 0 1 2 3 4
+2 │ 0 2 4 6 8
+3 │ 0 3 6 9 12
+```
+
+**Examples**
+
+```
+multiplicationTable(0, 0) =>
+  [[]]
+```
+
+```
+multiplicationTable(2, 2) =>
+  [
+    [0, 0],
+    [0, 1]
+  ]
+```
+
+```
+multiplicationTable(4, 5) =>
+  [
+    [0, 0, 0, 0, 0],
+    [0, 1, 2, 3, 4],
+    [0, 2, 4, 6, 8],
+    [0, 3, 6, 9, 12]
+  ]
 ```
